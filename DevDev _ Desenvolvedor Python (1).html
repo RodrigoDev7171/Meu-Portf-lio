@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DevDev | Desenvolvedor Python</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1220;--card:#121C30;--ink:#EAF0FA;--muted:#9FB0CC;--line:#243352;--blue:#4C8DF6;--violet:#8B6CF0;--gold:#F2C94C;--green:#5FD39A;--code:#0A101C;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F3F6FB;--card:#FFFFFF;--ink:#14213D;--muted:#51617E;--line:#D3DCEA;--blue:#2860C9;--violet:#6B4BD6;--gold:#9A6E00;--green:#17794F;--code:#EEF2F9}}
+:root[data-theme="light"]{--bg:#F3F6FB;--card:#FFFFFF;--ink:#14213D;--muted:#51617E;--line:#D3DCEA;--blue:#2860C9;--violet:#6B4BD6;--gold:#9A6E00;--green:#17794F;--code:#EEF2F9}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Poppins,system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+a{color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;flex-wrap:wrap;gap:12px}
+.logo{font:500 18px "Fira Code",monospace}.logo b{color:var(--gold);font-weight:500}.logo i{color:var(--blue);font-style:normal}
+nav div{display:flex;gap:18px;font-size:15px}nav a{text-decoration:none}nav a:hover{color:var(--blue)}
+.hero{text-align:center;padding:48px 0 56px}
+.badge{display:inline-block;font:400 13px "Fira Code",monospace;color:var(--gold);border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 16px}
+h1{font-size:clamp(2rem,7vw,3.2rem);line-height:1.15;margin:22px 0 14px;font-weight:700}
+h1 span{background:linear-gradient(90deg,var(--blue),var(--violet),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.type{font:400 17px "Fira Code",monospace;min-height:56px;color:var(--ink)}
+.type::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--blue);margin-left:3px;vertical-align:-3px;animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+.hero p.d{color:var(--muted);max-width:56ch;margin:6px auto 26px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:13px 24px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card)}
+.btn.main{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn:hover{filter:brightness(1.1)}
+.term{background:var(--code);border:1px solid var(--line);border-radius:14px;margin:36px auto 0;max-width:560px;text-align:left;overflow:hidden}
+.term .bar{display:flex;gap:7px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);font:12px "Fira Code",monospace;color:var(--muted)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#E5484D}.term .bar i:nth-child(2){background:#F2C94C}.term .bar i:nth-child(3){background:#5FD39A}
+pre{margin:0;padding:16px 18px;font:400 13.5px/1.7 "Fira Code",monospace;overflow-x:auto;color:var(--ink)}
+.k{color:var(--violet)}.s{color:var(--green)}.f{color:var(--blue)}
+section{padding:56px 0}
+h2{text-align:center;font-size:1.8rem;margin:0 0 8px}
+h2::after{content:"";display:block;width:56px;height:4px;border-radius:2px;margin:10px auto 0;background:linear-gradient(90deg,var(--blue),var(--gold))}
+.sub{text-align:center;color:var(--muted);margin:14px 0 30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.about h3{font-size:1.35rem;margin:0 0 12px}
+.about p{color:var(--muted);margin:0 0 14px}
+.about strong{color:var(--ink)}
+.facts{display:grid;gap:12px;margin-top:20px}
+.facts div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.facts b{display:block}.facts span{color:var(--muted);font-size:14px}
+.proj{margin-bottom:16px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.proj h3{margin:0;font-size:1.15rem}
+.st{font-size:12px;padding:3px 12px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.ok{color:var(--green)}.wip{color:var(--blue)}.plan{color:var(--violet)}
+.proj p{color:var(--muted);margin:0 0 12px;font-size:15px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}.tags span{font:12px "Fira Code",monospace;padding:3px 10px;border-radius:6px;background:var(--code);border:1px solid var(--line)}
+details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;color:var(--blue);font-weight:600;font-size:15px}
+details pre{background:var(--code);border-radius:10px;margin-top:12px;font-size:12.5px}
+.skill{margin-bottom:14px}
+.skill .row{display:flex;justify-content:space-between;gap:10px;font-weight:600}
+.skill .lv{font-size:13px;color:var(--gold)}
+.bar2{height:9px;background:var(--code);border:1px solid var(--line);border-radius:6px;margin:8px 0;overflow:hidden}
+.bar2 i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--violet));border-radius:6px}
+.skill small{color:var(--muted)}
+.contact{text-align:center}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:10px 0 36px}
+@media (prefers-reduced-motion:reduce){.type::after{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><span class="logo"><b>&lt;</b> DevDev <i>/&gt;</i></span><div><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#skills">Habilidades</a><a href="#contato">Contato</a></div></nav>
+
+<header class="hero">
+<span class="badge">Foco em Análise e Desenvolvimento de Sistemas</span>
+<h1>Olá! Eu sou o<br><span>Desenvolvedor Python</span></h1>
+<div class="type" id="type" aria-live="off">&gt; Criando apps &amp; sites em Python</div>
+<p class="d">Sou apaixonado por tecnologia e crio sites e aplicações com Python, HTML, CSS e JavaScript. Este é o meu espaço para mostrar minha evolução e meus projetos.</p>
+<div class="btns"><a class="btn main" href="#projetos">Ver meus projetos</a><a class="btn" href="#sobre">Conheça minha história</a></div>
+<div class="term"><div class="bar"><i></i><i></i><i></i>&nbsp;hello_world.py</div>
+<pre><span class="k">def</span> <span class="f">bem_vindo</span>():
+  <span class="f">print</span>(<span class="s">"Bem-vindo ao meu portfólio!"</span>)
+  <span class="f">print</span>(<span class="s">"Python, Web e Desenvolvimento de Sistemas"</span>)
+<span class="f">bem_vindo</span>()
+<span class="s">&gt;&gt; Bem-vindo ao meu portfólio!</span></pre></div>
+</header>
+
+<section id="sobre" class="about">
+<h2>Sobre mim</h2>
+<p class="sub">Construindo o futuro linha por linha</p>
+<div class="card">
+<h3>Minha história</h3>
+<p>Descobri a programação e, desde que executei meu primeiro código, decidi o que quero para a minha vida profissional: trabalhar com <strong>Análise e Desenvolvimento de Sistemas (ADS)</strong>.</p>
+<p>Uso ferramentas práticas, inclusive pelo celular, para aprofundar <strong>Python</strong>, algoritmos e estrutura de dados, e para criar aplicações do mundo real. Meu foco atual é aperfeiçoar a lógica e criar sites e automações para empresas de Recife e região.</p>
+<div class="facts"><div><b>Objetivo principal</b><span>Análise e Desenvolvimento de Sistemas</span></div><div><b>Desenvolvimento Mobile/Web</b><span>Programando onde estiver</span></div></div>
+</div></section>
+
+<section id="projetos">
+<h2>Projetos</h2>
+<p class="sub">O que já construí e o que vem por aí</p>
+<article class="card proj"><div class="head"><h3>Calculadora em Python</h3><span class="st ok">Concluído</span></div>
+<p>Consolida estruturas condicionais (if/elif/else), laços de repetição e operações matemáticas fundamentais.</p>
+<div class="tags"><span>Python</span><span>Lógica</span></div>
+<details><summary>Ver código</summary><pre><span class="k">def</span> <span class="f">calculadora</span>():
+  opcao = <span class="f">input</span>(<span class="s">"Escolha (1-4): "</span>)
+  n1 = <span class="f">float</span>(<span class="f">input</span>(<span class="s">"Primeiro número: "</span>))
+  n2 = <span class="f">float</span>(<span class="f">input</span>(<span class="s">"Segundo número: "</span>))
+  <span class="k">if</span> opcao == <span class="s">'1'</span>:
+    <span class="f">print</span>(<span class="s">f"Resultado: {n1 + n2}"</span>)
+  <span class="k">elif</span> opcao == <span class="s">'4'</span> <span class="k">and</span> n2 != 0:
+    <span class="f">print</span>(<span class="s">f"Resultado: {n1 / n2}"</span>)
+  <span class="k">else</span>:
+    <span class="f">print</span>(<span class="s">"Opção inválida!"</span>)</pre></details></article>
+
+<article class="card proj"><div class="head"><h3>Gerenciador de Tarefas</h3><span class="st wip">Em desenvolvimento</span></div>
+<p>Aplicativo de terminal para celular e PC com cadastro, conclusão e persistência de dados em arquivos .txt ou JSON.</p>
+<div class="tags"><span>Python</span><span>Persistência</span><span>Termux</span></div></article>
+
+<article class="card proj"><div class="head"><h3>Web App em Flask</h3><span class="st plan">Planejado</span></div>
+<p>Aplicação web conectando Python no backend com HTML e CSS no frontend, para criar um painel dinâmico e interativo no navegador.</p>
+<div class="tags"><span>Flask</span><span>HTML/CSS</span><span>Web Backend</span></div></article>
+</section>
+
+<section id="skills">
+<h2>Habilidades</h2>
+<p class="sub">Onde estou hoje em cada tecnologia</p>
+<div class="card">
+<div class="skill"><div class="row"><span>Python</span><span class="lv">Em evolução</span></div><div class="bar2"><i style="width:75%"></i></div><small>Estruturas condicionais, laços, funções e lógica.</small></div>
+<div class="skill"><div class="row"><span>Lógica &amp; Algoritmos</span><span class="lv">Fundamentos</span></div><div class="bar2"><i style="width:80%"></i></div><small>Resolução de problemas, fluxogramas e estruturas de dados simples.</small></div>
+<div class="skill"><div class="row"><span>HTML5</span><span class="lv">Avançado</span></div><div class="bar2"><i style="width:92%"></i></div><small>Estrutura semântica e páginas completas.</small></div>
+<div class="skill"><div class="row"><span>CSS3 / Estilização</span><span class="lv">Avançado</span></div><div class="bar2"><i style="width:92%"></i></div><small>Layouts responsivos e interfaces para celular e computador.</small></div>
+<div class="skill"><div class="row"><span>JavaScript</span><span class="lv">Avançado</span></div><div class="bar2"><i style="width:90%"></i></div><small>Interatividade e lógica no navegador.</small></div>
+</div></section>
+
+<section id="contato" class="contact">
+<h2>Contato</h2>
+<p class="sub">Gosta de programação? Mande uma mensagem e acompanhe minha jornada.</p>
+<div class="btns"><a class="btn main" href="https://wa.me/5581989245162">Chamar no WhatsApp</a><a class="btn" href="mailto:rodrigovieiradasilva777f@gmail.com">Enviar e-mail</a></div>
+</section>
+<footer>© 2026 DevDev. Feito com foco em Python e Web.</footer>
+</div>
+<script>
+(function(){
+var el=document.getElementById("type");
+var tx=["> Criando apps & sites em Python","> Sites para empresas de Recife e região","> HTML, CSS e JavaScript avançados"];
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){return}
+var i=0,j=0,del=false;
+function tick(){
+var t=tx[i];
+el.textContent=t.slice(0,j);
+if(!del&&j<t.length){j++;setTimeout(tick,60)}
+else if(!del){del=true;setTimeout(tick,1800)}
+else if(j>0){j--;setTimeout(tick,28)}
+else{del=false;i=(i+1)%tx.length;setTimeout(tick,300)}
+}
+tick();
+})();
+</script>
+</body>
+</html>
